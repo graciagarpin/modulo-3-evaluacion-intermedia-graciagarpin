@@ -9,8 +9,6 @@ function App() {
     character: '',
   });
 
-  // Necesito pintarlos los dos inputs concatenados en el listado.
-  // De momento a mi al clicar en añadir sólo se me pinta el input personaje, no me ha dado tiempo a coger el valor de frase y pintarla antes de personaje.
   // const [newCharacter, setNewCharacter] = useState (friendList)
 
   const handleNewPhrase = (ev) => {
@@ -32,7 +30,7 @@ function App() {
   const htmlData = data.map((friend, index) => {
     return (
       <tr className="friend_phrase" key={index}>
-        {friend.quote} - {friend.character}
+        {`${friend.quote} - ${friend.character}`}
       </tr>
     );
   });
@@ -60,12 +58,15 @@ function App() {
         Frase
         <input
           type="text"
+          name="quote"
+          id="quote"
           onChange={handleNewPhrase}
           value={handleNewPhrase.quote}
         />
         Personaje
         <input
           type="text"
+          name="character"
           id="character"
           onChange={handleNewPhrase}
           value={handleNewPhrase.character}
