@@ -18,7 +18,7 @@ function App() {
           </tr>
         </thead>
         <tbody id="cuerpoTabla">
-          <td>
+          {/* <td>
             <tr>hola</tr>
             <tr>hola</tr>
             <tr>hola</tr>
@@ -31,9 +31,19 @@ function App() {
             <tr>hola</tr>
             <tr>hola</tr>
             <tr>hola</tr>
-          </td>
+          </td> */}
         </tbody>
       </table>
+      <form action="|">
+        <h2>Añadir una nueva frase</h2>
+        Frase <input type="text" />
+        Personaje <input type="text" />
+        <input
+          className="submitBtn"
+          type="submit"
+          value="Añadir"
+        />
+      </form>
     </div>
   );
 }
