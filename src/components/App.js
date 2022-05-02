@@ -35,10 +35,25 @@ function App() {
 
   const handleSearch = (ev) => {
     setSearch(ev.target.value);
+    console.log(search);
   }
 
-  const htmlData = 
-  data.map((friend, index) => {
+  const htmlData = data
+  .filter((friend)=>
+  friend.quote.toLowerCase().includes(search.toLowerCase())
+  )
+  .filter((friend) => {
+    if (select === "Elige personaje") {
+      return true;
+    }else if  (select === friend.character){
+      return true;
+    }else {
+      return false;
+    }
+  
+  }
+  )
+  .map((friend, index) => {
     return (
       <tr className="friend_phrase" key={index}>
         {`${friend.quote} - ${friend.character}`}
