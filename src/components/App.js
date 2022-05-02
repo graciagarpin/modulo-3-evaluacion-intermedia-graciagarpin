@@ -2,16 +2,14 @@ import '../styles/App.scss';
 import friendsList from '../data/friends.json';
 import { useState } from 'react';
 
-
 function App() {
-
-
-
   const [data, setData] = useState(friendsList);
   const [newPhrase, setNewPhrase] = useState({
     quote: '',
     character: '',
   });
+  const [select, setSelect] = useState("Elige personaje");
+  const [search, setSearch] = useState("");
 
   // const [newCharacter, setNewCharacter] = useState (friendList)
 
@@ -31,7 +29,16 @@ function App() {
     });
   };
 
-  const htmlData = data.map((friend, index) => {
+  const handleSelect = (ev) => {
+    setSelect(ev.target.value);
+  }
+
+  const handleSearch = (ev) => {
+    setSearch(ev.target.value);
+  }
+
+  const htmlData = 
+  data.map((friend, index) => {
     return (
       <tr className="friend_phrase" key={index}>
         {`${friend.quote} - ${friend.character}`}
@@ -47,11 +54,19 @@ function App() {
           <tr>
             <th>
               Filtrar por frase
-              <input type="text" />
+              <input type="search" className='search' autoComplete='off' name='search' placeholder='Busca' onChange={handleSearch} value={search}/>
             </th>
             <th>
               Filtrar por personaje
-              <input type="text" />
+              <select onChange={handleSelect} value={select} id="">
+                <option value="Elige presonaje">Elige presonaje</option>
+                <option value="Ross">Ross</option>
+                <option value="Monica">Monica</option>
+                <option value="Joey">Joey</option>
+                <option value="Phoebe">Phoebe</option>
+                <option value="Chandler">Chandler</option>
+                <option value="Rachel">Rachel</option>
+              </select>
             </th>
           </tr>
         </thead>
