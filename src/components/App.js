@@ -2,7 +2,11 @@ import '../styles/App.scss';
 import friendsList from '../data/friends.json';
 import { useState } from 'react';
 
+
 function App() {
+
+
+
   const [data, setData] = useState(friendsList);
   const [newPhrase, setNewPhrase] = useState({
     quote: '',
