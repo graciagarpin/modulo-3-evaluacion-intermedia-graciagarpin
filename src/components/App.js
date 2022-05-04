@@ -8,7 +8,7 @@ function App() {
     quote: '',
     character: '',
   });
-  const [select, setSelect] = useState("Elige personaje");
+  const [select, setSelect] = useState("Todos");
   const [search, setSearch] = useState("");
 
   // const [newCharacter, setNewCharacter] = useState (friendList)
@@ -43,7 +43,7 @@ function App() {
   friend.quote.toLowerCase().includes(search.toLowerCase())
   )
   .filter((friend) => {
-    if (select === "Elige personaje") {
+    if (select === "Todos") {
       return true;
     }else if  (select === friend.character){
       return true;
@@ -74,7 +74,7 @@ function App() {
             <th>
               Filtrar por personaje
               <select onChange={handleSelect} value={select} id="">
-                <option value="Elige presonaje">Elige presonaje</option>
+                <option value="Todos">Todos</option>
                 <option value="Ross">Ross</option>
                 <option value="Monica">Monica</option>
                 <option value="Joey">Joey</option>
