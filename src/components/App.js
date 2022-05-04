@@ -8,8 +8,8 @@ function App() {
     quote: '',
     character: '',
   });
-  const [select, setSelect] = useState("Todos");
-  const [search, setSearch] = useState("");
+  const [select, setSelect] = useState('Todos');
+  const [search, setSearch] = useState('');
 
   // const [newCharacter, setNewCharacter] = useState (friendList)
 
@@ -31,64 +31,65 @@ function App() {
 
   const handleSelect = (ev) => {
     setSelect(ev.target.value);
-  }
+  };
 
   const handleSearch = (ev) => {
     setSearch(ev.target.value);
     console.log(search);
-  }
+  };
 
   const htmlData = data
-  .filter((friend)=>
-  friend.quote.toLowerCase().includes(search.toLowerCase())
-  )
-  .filter((friend) => {
-    if (select === "Todos") {
-      return true;
-    }else if  (select === friend.character){
-      return true;
-    }else {
-      return false;
-    }
-  
-  }
-  )
-  .map((friend, index) => {
-    return (
-      <tr className="friend_phrase" key={index}>
-        {`${friend.quote} - ${friend.character}`}
-      </tr>
-    );
-  });
+    .filter((friend) =>
+      friend.quote.toLowerCase().includes(search.toLowerCase())
+    )
+    .filter((friend) => {
+      if (select === 'Todos') {
+        return true;
+      } else if (select === friend.character) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .map((friend, index) => {
+      return (
+        <li className="friend_phrase" key={index}>
+          {`${friend.quote} - ${friend.character}`}
+        </li>
+      );
+    });
 
   return (
     <div>
       <header>
         <h1>Frases de Friends</h1>
       </header>
-      <table>
-        <thead>
-          <tr>
-            <th>
-              <label htmlFor="search">Filtrar por frase</label>
-              <input type="search" id="search" className='search' autoComplete='off' name='search' placeholder='Busca' onChange={handleSearch} value={search}/>
-            </th>
-            <th>
-              <label htmlFor="select">Filtrar por personaje</label>
-              <select onChange={handleSelect} value={select} id="select">
-                <option value="Todos">Todos</option>
-                <option value="Ross">Ross</option>
-                <option value="Monica">Monica</option>
-                <option value="Joey">Joey</option>
-                <option value="Phoebe">Phoebe</option>
-                <option value="Chandler">Chandler</option>
-                <option value="Rachel">Rachel</option>
-              </select>
-            </th>
-          </tr>
-        </thead>
-        <tbody id="cuerpoTabla">{htmlData}</tbody>
-      </table>
+      <form action="">
+        <label htmlFor="search">Filtrar por frase</label>
+        <input
+          type="search"
+          id="search"
+          className="search"
+          autoComplete="off"
+          name="search"
+          placeholder="Busca"
+          onChange={handleSearch}
+          value={search}
+        />
+
+        <label htmlFor="select">Filtrar por personaje</label>
+        <select onChange={handleSelect} value={select} id="select">
+          <option value="Todos">Todos</option>
+          <option value="Ross">Ross</option>
+          <option value="Monica">Monica</option>
+          <option value="Joey">Joey</option>
+          <option value="Phoebe">Phoebe</option>
+          <option value="Chandler">Chandler</option>
+          <option value="Rachel">Rachel</option>
+        </select>
+      </form>
+      <ul id="cuerpoTabla">{htmlData}</ul>
+
       <form action="|">
         <h2>Añadir una nueva frase</h2>
         <label htmlFor="quote">Frase</label>
