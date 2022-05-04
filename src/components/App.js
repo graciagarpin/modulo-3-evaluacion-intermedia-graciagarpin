@@ -64,57 +64,57 @@ function App() {
       <header>
         <h1>Frases de Friends</h1>
       </header>
-      <form action="">
-        <label htmlFor="search">Filtrar por frase</label>
-        <input
-          type="search"
-          id="search"
-          className="search"
-          autoComplete="off"
-          name="search"
-          placeholder="Busca"
-          onChange={handleSearch}
-          value={search}
-        />
-
-        <label htmlFor="select">Filtrar por personaje</label>
-        <select onChange={handleSelect} value={select} id="select">
-          <option value="Todos">Todos</option>
-          <option value="Ross">Ross</option>
-          <option value="Monica">Monica</option>
-          <option value="Joey">Joey</option>
-          <option value="Phoebe">Phoebe</option>
-          <option value="Chandler">Chandler</option>
-          <option value="Rachel">Rachel</option>
-        </select>
-      </form>
-      <ul id="cuerpoTabla">{htmlData}</ul>
-
-      <form action="|">
-        <h2>Añadir una nueva frase</h2>
-        <label htmlFor="quote">Frase</label>
-        <input
-          type="text"
-          name="quote"
-          id="quote"
-          onChange={handleNewPhrase}
-          value={handleNewPhrase.quote}
-        />
-        <label htmlFor="character">Personaje</label>
-        <input
-          type="text"
-          name="character"
-          id="character"
-          onChange={handleNewPhrase}
-          value={handleNewPhrase.character}
-        />
-        <input
-          className="submitBtn"
-          type="submit"
-          value="Añadir"
-          onClick={handleClick}
-        />
-      </form>
+      <main>
+        <form action="">
+          <label htmlFor="search">Filtrar por frase</label>
+          <input
+            type="search"
+            id="search"
+            className="search"
+            autoComplete="off"
+            name="search"
+            placeholder="Busca"
+            onChange={handleSearch}
+            value={search}
+          />
+          <label htmlFor="select">Filtrar por personaje</label>
+          <select onChange={handleSelect} value={select} id="select">
+            <option value="Todos">Todos</option>
+            <option value="Ross">Ross</option>
+            <option value="Monica">Monica</option>
+            <option value="Joey">Joey</option>
+            <option value="Phoebe">Phoebe</option>
+            <option value="Chandler">Chandler</option>
+            <option value="Rachel">Rachel</option>
+          </select>
+        </form>
+        <ul id="cuerpoTabla">{htmlData}</ul>
+        <form action="|">
+          <h2>Añadir una nueva frase</h2>
+          <label htmlFor="quote">Frase</label>
+          <input
+            type="text"
+            name="quote"
+            id="quote"
+            onChange={handleNewPhrase}
+            value={handleNewPhrase.quote}
+          />
+          <label htmlFor="character">Personaje</label>
+          <input
+            type="text"
+            name="character"
+            id="character"
+            onChange={handleNewPhrase}
+            value={handleNewPhrase.character}
+          />
+          <input
+            className="submitBtn"
+            type="submit"
+            value="Añadir"
+            onClick={handleClick}
+          />
+        </form>
+      </main>
     </div>
   );
 }
