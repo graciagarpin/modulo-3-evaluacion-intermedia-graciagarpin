@@ -89,7 +89,7 @@ function App() {
       </table>
       <form action="|">
         <h2>Añadir una nueva frase</h2>
-        Frase
+        <label htmlFor="quote">Frase</label>
         <input
           type="text"
           name="quote"
@@ -97,7 +97,7 @@ function App() {
           onChange={handleNewPhrase}
           value={handleNewPhrase.quote}
         />
-        Personaje
+        <label htmlFor="character">Personaje</label>
         <input
           type="text"
           name="character"
