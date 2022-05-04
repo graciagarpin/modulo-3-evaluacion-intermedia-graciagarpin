@@ -63,7 +63,9 @@ function App() {
 
   return (
     <div>
-      <h1>Frases de Friends</h1>
+      <header>
+        <h1>Frases de Friends</h1>
+      </header>
       <table>
         <thead>
           <tr>
