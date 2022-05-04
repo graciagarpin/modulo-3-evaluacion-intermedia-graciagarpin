@@ -68,12 +68,12 @@ function App() {
         <thead>
           <tr>
             <th>
-              Filtrar por frase
-              <input type="search" className='search' autoComplete='off' name='search' placeholder='Busca' onChange={handleSearch} value={search}/>
+              <label htmlFor="search">Filtrar por frase</label>
+              <input type="search" id="search" className='search' autoComplete='off' name='search' placeholder='Busca' onChange={handleSearch} value={search}/>
             </th>
             <th>
-              Filtrar por personaje
-              <select onChange={handleSelect} value={select} id="">
+              <label htmlFor="select">Filtrar por personaje</label>
+              <select onChange={handleSelect} value={select} id="select">
                 <option value="Todos">Todos</option>
                 <option value="Ross">Ross</option>
                 <option value="Monica">Monica</option>
